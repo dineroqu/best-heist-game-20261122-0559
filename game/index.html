@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nightshift Heist — The Meridian Gallery</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main id="wrap">
+  <canvas id="game" width="960" height="640" aria-label="Nightshift Heist game canvas"></canvas>
+  <p id="hint">WASD / arrows to move &middot; Shift to sneak &middot; Q smoke &middot; E coin &middot; P pause &middot; M mute</p>
+</main>
+<div id="debug" aria-hidden="true"></div>
+<script>
+  // Verification hook only: records page errors and loaded resources so a
+  // headless run can prove the page loaded cleanly. It changes nothing visual.
+  window.addEventListener('error', function (e) {
+    var d = document.getElementById('debug');
+    d.textContent += 'ERROR:' + (e.message || 'unknown') + ';';
+  });
+  window.addEventListener('load', function () {
+    var d = document.getElementById('debug');
+    var n = 0;
+    try { n = performance.getEntriesByType('resource').length; } catch (err) { n = -1; }
+    d.textContent += 'LOADED resources=' + n + ';';
+  });
+</script>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
