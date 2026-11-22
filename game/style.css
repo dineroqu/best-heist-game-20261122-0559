@@ -1,0 +1,40 @@
+/* Nightshift Heist — page chrome. The game itself is drawn on canvas. */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #07080f;
+  color: #cfd3e6;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+#wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+}
+
+#game {
+  display: block;
+  width: min(960px, 96vw);
+  height: auto;
+  border: 2px solid #2b3350;
+  border-radius: 6px;
+  background: #0b0e1a;
+  box-shadow: 0 0 42px rgba(30, 60, 140, 0.35);
+}
+
+#hint {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: #7e86a3;
+  text-align: center;
+}
+
+#debug { display: none; }
